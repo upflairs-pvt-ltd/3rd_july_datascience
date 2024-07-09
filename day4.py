@@ -30,18 +30,18 @@
 
 
 
-science_marks = {'Name':['rahul','mohit','ritu','yash','jugnu'],
-            'Marks':[52,14,36,45,96],
-            'Subject':"Science"}  
+# science_marks = {'Name':['rahul','mohit','ritu','yash','jugnu'],
+#             'Marks':[52,14,36,45,96],
+#             'Subject':"Science"}  
 
 
 # science_marks['Name'].remove('mohit')
 # science_marks['Marks'].remove(14)
 
 
-science_marks['Marks'][1] = 41
+# science_marks['Marks'][1] = 41
 
-print(science_marks)
+# print(science_marks)
 
 
 
@@ -85,6 +85,12 @@ print(science_marks)
 # # 1. Arithmatic operators  
 # num1 = int(input('Plz enter first number : '))
 # num2 = int(input('Plz enter second number : '))
+# output = num1 % num2   # % , **   
+# output = num1 ** num2 
+# print(output)
+# 9 % 3 = 0 
+# 10 % 3 = 1   
+
 
 # num1 = int(num1)
 # num2 = int(num2)
@@ -92,7 +98,9 @@ print(science_marks)
 # print(type(num1))
 # print(type(num2))
 
-# output = num1 // num2
 
-# print(output)
 
+num1 = int(input('Plz enter first number : '))
+num2 = int(input('Plz enter second number : '))
+output = num1 ** num2 
+print(output)
