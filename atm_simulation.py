@@ -11,7 +11,7 @@ Type 3 >>>> WITHDRAWL.
 """
 print(message)
 task = int(input("plz enter your option : "))
-available_amount = 5000
+available_amount = 5000 
 if task >=1 and task <=3:
     print('Welcome to you in virtual bank program')
 
@@ -30,8 +30,6 @@ if task >=1 and task <=3:
         else:
             print("plz enter valid amount!")
 
-
-
     else:
         # withdrawl amount
         withdrawl_amount = int(input("plz enter withdrawl amount : "))
@@ -47,3 +45,7 @@ if task >=1 and task <=3:
 else:
     print("plz choose valid option in between 1 to 3 !")
 
+
+
+# same program 
+# 3 times 
