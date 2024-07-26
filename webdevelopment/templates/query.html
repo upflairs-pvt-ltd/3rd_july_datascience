@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <title>Query Us</title>
+    </head>
+    <body style="background-color: aquamarine;">
+        <h1 style="text-align: center;">😎 Query Us 😎</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis illo cumque,
+             quod fugit minus dicta voluptate id. Reiciendis rem inventore architecto ullam quam
+              ratione sapiente soluta quaerat dolore, et maxime!</p>
+
+        <hr>
+        <h2>fill your query 😏</h2>
+        <hr>
+
+        <form action="{{ url_for('user_query') }}" method="post">
+        <label for="">Name  :</label>
+        <input type="text" name="name" id="" placeholder="enter your name"  required><br><br><br>
+
+        <label for="">Age   :</label>
+        <input type="text" name="age" id="" required><br><br><br>
+
+        <label for="">Address  :</label>
+        <input type="text" name="address" id="" required><br><br><br>
+
+        <label for="">College  : </label>
+        <input type="text" name="college" id="" required><br><br><br>
+
+        <label for="">Branch   :</label>
+        <input type="text" name="branch" id="" required><br><br><br>
+
+        <label for="">Roll No  :</label>
+        <input type="text" name="roll_no" id="" required><br><br><br>
+
+
+        <label for="">Query subject  :</label>
+        <input type="text" name="query_sub" id="" required><br><br><br>
+
+        <button type="submit">Submit your query 🙂</button>
+    </form>
+        
+    </body>
+</html>
