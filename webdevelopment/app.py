@@ -1,4 +1,7 @@
 from flask import Flask,render_template,url_for,request
+import sqlite3 
+
+
 app = Flask(__name__)
 
 @app.route('/')  # http://127.0.0.1:5000
@@ -21,16 +24,29 @@ def query():
 @app.route('/user_query',methods=['GET','POST'])
 def user_query():
     if request.method == "POST": 
+        
         name = request.form['name']
-        age = request.form['age']
+        age = int(request.form['age'])
         address = request.form['address']
         college = request.form['college']
         branch = request.form['branch']
-        roll_no = request.form['roll_no']
+        roll_no = int(request.form['roll_no'])
         query_sub = request.form['query_sub']
 
-        user_data = [name,age,address,college,branch,roll_no,query_sub]
-        return user_data 
+        user_data = (name,age,address,college,branch,roll_no,query_sub)
+        ## database 
+        conn =  sqlite3.connect("userdata.db")
+        insert_data_query = """
+        insert into userecord values(?,?,?,?,?,?,?)
+        """
+        cur = conn.cursor()
+        cur.execute(insert_data_query,user_data)
+        print("You have successfully inserted your data into table : ",user_data)
+        conn.commit()
+        cur.close()
+        conn.close()
+
+        return  "Your data is Submitted into the data base!"
 
 
 if __name__ == "__main__":
