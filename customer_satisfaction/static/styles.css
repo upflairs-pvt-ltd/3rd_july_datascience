@@ -1,0 +1,354 @@
+@font-face {
+    font-family: "GrandSlang-Roman";
+    src: url("/static/fonts/GrandSlang-Roman.otf") format("woff2");
+}
+@font-face {
+    font-family: "GrandSlang-Italic";
+    src: url("/static/fonts/GrandSlang-Italic.otf") format("woff2");
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    background-color: #461220f6;
+}
+
+.navbar {
+    position: fixed;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 600px;
+    background-color: #333333;
+    overflow: hidden;
+    font-family: "GrandSlang-Roman", sans-serif;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 35px;
+    height: 60px;
+}
+
+.navbar a {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 25px;
+    background-color: #ddd;
+    margin: 10px 10px;
+}
+
+.navbar a:hover {
+    background-color: black;
+    color: #ddd;
+}
+
+.section {
+    padding: 60px 20px;
+    min-height: 100vh;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#projects {
+    background-color: #F7B267;
+    text-align: center;
+}
+
+#about {
+    background-color: #461220f6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.about-card {
+    background-color: #f25e5ce2;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.small-card {
+    background-color: #f7f7f7;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 10px;
+    flex: 1 1 calc(33.333% - 20px);
+}
+
+.small-card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.small-card h2 {
+    font-family: "GrandSlang-Roman";
+    font-size: 24px;
+    margin: 0 0 10px;
+}
+
+.small-card p {
+    font-family: cursive;
+    font-size: 18px;
+    margin: 0;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+}
+
+.social-card {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    background-color: #f7f7f700;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+.social-card img {
+    width: 50px;
+    height: 50px;
+}
+
+.social-card:hover {
+    background-color: #dddddd00;
+    width: 70px;
+    height: 40px;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        width: 70%;
+        max-width: 100%;
+        height: 5%;
+        padding: 10px;
+    }
+
+    .about-card {
+        flex-direction: column;
+    }
+
+    .small-card {
+        margin: 10px 0;
+        flex: 1 1 100%;
+    }
+
+    .social-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+#description {
+    background-color: #f25e5ce2;
+}
+
+.description-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+.image-card {
+    flex: 1 1 calc(40% - 20px);
+}
+
+.image-card img {
+    width: 100%;
+    border-radius: 15px;
+    height: auto;
+}
+
+.text-content {
+    flex: 1 1 calc(55% - 20px);
+    margin-left: 20px;
+}
+
+.card {
+    background-color: #f7b167c1;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.text-content h1 {
+    font-family: "GrandSlang-Roman";
+    font-size: 24px;
+    margin: 0;
+}
+
+.text-content ul {
+    list-style-type: none;
+    padding: 0;
+    font-family: "GrandSlang-Roman";
+    font-size: 16px;
+}
+
+.text-content li {
+    margin-bottom: 10px;
+}
+
+.text-content p {
+    font-family: cursive;
+    font-size: 18px;
+    margin: 20px 0 0;
+}
+
+@media (max-width: 768px) {
+    .description-container {
+        flex-direction: column;
+    }
+
+    .navbar{
+        width: 85%;
+    }
+
+    .navbar a {
+        padding: 5px;
+        text-decoration: none;
+        border-radius: 25px;
+        background-color: #ddd;
+        
+    }
+    
+    .navbar a:hover {
+        background-color: black;
+        color: #ddd;
+    }
+
+    .image-card, .text-content {
+        max-width: 100%;
+        margin-left: 0;
+    }
+}
+
+#description h1 {
+    font-size: 25px;
+}
+
+#description ul {
+    font-size: 32px;
+}
+
+#description li {
+    font-size: 15px;
+}
+
+#Thanking {
+    background-color: #231f20;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+#Thanking h1 {
+    margin: 0;
+    font-size: 48px;
+    color: #f25e5ce2;
+    font-family: "GrandSlang-Italic";
+    text-decoration: underline #f7b1678c;
+}
+
+#Thanking p {
+    margin: 0;
+    color: #f25e5ce2;
+    font-size: 24px;
+    font-family: "GrandSlang-Italic";
+    text-decoration: overline #461220f6;
+}
+
+.cust {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.cust img {
+    width: 100%;
+}
+
+.pro {
+    margin: 20px 0;
+}
+
+.pro p, .pro h1 {
+    font-family: "GrandSlang-Roman";
+    font-size: 24px;
+    text-decoration: underline 2px #555;
+    text-align: center;
+}
+
+.project-btn {
+    display: inline-block;
+    max-width: 200px;
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 18px;
+    color: #fff;
+    background-color: #333;
+    border: none;
+    border-radius: 25px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    position: relative;
+}
+
+.project-btn:hover {
+    background-color: #ddd;
+    color: #333;
+}
+
+@media (max-width: 768px) {
+    .project-btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .pro p, .pro h1 {
+        font-size: 18px;
+    }
+
+    #Thanking h1 {
+        font-size: 36px;
+    }
+
+    #Thanking p {
+        font-size: 18px;
+    }
+}

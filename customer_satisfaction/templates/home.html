@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Single Page Scroll with Animation</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div class="navbar">
+        <a href="#project">Project</a>
+        <a href="#description">Description</a>
+        <a href="#about">About</a>
+        <a href="#Thanking">Arigato</a>
+    </div>
+
+    <div id="projects" class="section">
+        <div class="cust">
+            <img src="/static/customer-experience-creative-collage (1)-Photoroom.png" alt="Customer Experience">
+        </div>
+        <div class="pro">
+            <h1>
+                Customer Satisfaction
+            </h1>
+            <p>
+                by Rituraj Singh :)
+            </p>
+        </div>
+        <a href="/project" class="project-btn">Project Explore</a>
+        
+    </div>
+
+    <div id="description" class="section">
+        <div class="description-container">
+            <div class="image-card card">
+                <img src="/static/five-gold-rating-stars-3d-hand-Photoroom.png" alt="Project Image">
+            </div>
+            
+            <div class="text-content">
+                <div class="card">
+                    <h1>I have explored the dataset and, utilizing logistic regression, developed the "Customer Satisfaction" project.<br> This project aims to predict customer satisfaction based on various factors within the dataset.</h1>
+                </div>
+        
+                <div class="card">
+                    <ul>
+                        Tools and Libraries Used:
+                        <br><br><li>NumPy: For numerical operations and handling array-based computations.</li>
+                        <li>Pandas: To load, manipulate, and analyze the dataset efficiently.</li>
+                        <li>Matplotlib: For creating static, interactive, and animated visualizations to understand the data better.</li>
+                        <li>Seaborn: For making attractive and informative statistical graphics.</li>
+                        <li>OS: For handling file operations and directory management.</li>
+                        <li>Joblib: For saving and loading the machine learning model and other large data structures efficiently.</li>
+                    </ul>
+                </div>
+        
+                <div class="card">
+                    <p>Customer satisfaction analysis uses data science and machine learning to improve customer experiences. By collecting and preprocessing feedback, exploring data trends, and applying machine learning models, businesses can gain valuable insights into customer sentiment. This analysis helps in predicting satisfaction levels and identifying key factors influencing customer experiences, enabling more effective strategies to enhance overall satisfaction.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+        
+    <div id="about" class="section">
+        <div class="about-card">
+            <div class="card small-card">
+                <img src="/static/WhatsApp Image 2024-07-31 at 17.49.22_c3af1c3b.jpg" alt="Your Photo">
+            </div>
+            <div class="card small-card">
+                <h2>About Me</h2>
+                <p>🚀 Hi, Future Innovator! 🌟</p>
+                <p>I'm a Software Engineer, Web Developer, and Data Scientist, currently studying Computer Science at PIET, Jaipur (Class of 2022).</p>
+                <p>🌐 From Bihar, born on December 12, 2004.</p>
+                <p>💻 Skilled in C, C++, Python, Flask, Java, JS, HTML, CSS, Bootstrap, PHP, Pandas, Numpy and MySQL. I turn code into functional creations.</p>
+                <p>🚀 I specialize in backend development and love challenges that push tech boundaries.</p>
+                <p>🎮 Outside coding, I'm an anime fan, exploring fantastical worlds for inspiration.</p>
+                <p>Let's innovate and make the digital world amazing! 🔥✨</p>
+            </div>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/rituraj-singh-530876278/" target="_blank" class="social-card">
+                    <img src="/static/image.png" alt="LinkedIn">
+                </a>
+                <a href="https://github.com/RiturajS12" target="_blank" class="social-card">
+                    <img src="/static/image3.png" alt="GitHub">
+                </a>
+                <a href="https://www.instagram.com/_its_rrj" target="_blank" class="social-card">
+                    <img src="/static/image1.png" alt="Instagram">
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <div id="Thanking" class="section">
+        <h1>Thank you!!</h1>
+        <p>
+            for giving ur time to us...
+            <br>
+            we will meet again!!
+        </p>
+    </div>
+    <script>
+        
+const sections = document.querySelectorAll('.section');
+
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+        } else {
+            entry.target.classList.remove('visible');
+        }
+    });
+}, {
+    threshold: 0.1
+});
+
+sections.forEach(section => {
+    observer.observe(section);
+});
+
+document.querySelectorAll('.navbar a').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
+    </script>
+</body>
+</html>
