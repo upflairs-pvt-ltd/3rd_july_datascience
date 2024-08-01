@@ -1,4 +1,7 @@
 from flask import Flask, render_template,url_for,request
+import joblib
+
+model = joblib.load('logistic_regression.lb')
 app = Flask(__name__)
 
 @app.route('/')
@@ -23,11 +26,26 @@ def prediction():
         customer_type  = int(request.form["customer-type"])
         travel_type = int(request.form["travel-type"])
         class_Type  = request.form["class-type"]
-
-        UNSEEN_DATA = [age,flight_distance,infligth_entertainment,baggage_handling,
+        Class_Eco = 0
+        Class_Eco_Plus = 0
+        if class_Type == 'ECO':
+            Class_Eco = 1 
+            Class_Eco_Plus = 0
+        elif class_Type == 'ECO_PLUS':
+            Class_Eco = 0 
+            Class_Eco_Plus = 1
+        else:
+            Class_Eco = 0
+            Class_Eco_Plus = 0
+        UNSEEN_DATA = [[age,flight_distance,infligth_entertainment,baggage_handling,
                        cleanliness,departure_delay ,arrival_delay,gender,
-                       customer_type,travel_type,class_Type]
-        return UNSEEN_DATA
+                       customer_type,travel_type,Class_Eco,Class_Eco_Plus]]
+
+        prediction = model.predict(UNSEEN_DATA)[0]
+        print(prediction)
+        labels = {'1':"SATISFIED",'0':"DISATISFIED"}
+        # return labels[str(prediction)]
+        return render_template('output.html',output=labels[str(prediction)])
 
 
 
