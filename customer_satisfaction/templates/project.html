@@ -38,7 +38,7 @@
     
     <h2 style="margin-top: 130px;text-align: center;">Enter the Data for Prediction</h2>
 
-    <form action=""  id="contact-form" style="margin-top: 50px;">
+    <form action="{{ url_for('prediction') }}" method="post"  id="contact-form" style="margin-top: 50px;">
         <label for="age">Age :</label>
         <input type="text" name="age" id="age" required><br>
 
@@ -48,31 +48,31 @@
         <label for="inflight-entertainment">Inflight Entertainment :</label>
         <select id="inflight-entertainment" name="inflight-entertainment"
             style="width: 100%; padding: 10px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 5px;">
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
         </select><br>
 
         <label for="baggage-handling">Baggage handling :</label>
         <select id="baggage-handling" name="baggage-handling"
             style="width: 100%; padding: 10px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 5px;">
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
         </select><br>
 
         <label for="cleanliness">Cleanliness :</label>
         <select id="cleanliness" name="cleanliness"
             style="width: 100%; padding: 10px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 5px;">
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
         </select><br>
 
         <label for="departure-delay">Departure Delay in Minutes :</label>
@@ -84,30 +84,29 @@
         <label for="gender">Gender :</label>
         <select id="gender" name="gender"
             style="width: 100%; padding: 10px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 5px;">
-            <option>Male</option>
-            <option>Female</option>
+            <option value="1">Male</option>
+            <option value="0">Female</option>
         </select><br>
 
         <label for="customer-type">Customer Type :</label>
         <select id="customer-type" name="customer-type"
             style="width: 100%; padding: 10px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 5px;">
-            <option>Loyal Customer</option>
-            <option>Disloyal Customer</option>
+            <option value="0">Loyal Customer</option>
+            <option value="1">Disloyal Customer</option>
         </select><br>
 
         <label for="travel-type">Type of Travel :</label>
         <select id="travel-type" name="travel-type"
             style="width: 100%; padding: 10px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 5px;">
-            <option>Personal Travel</option>
-            <option>Business Travel</option>
+            <option value="1">Personal Travel</option>
+            <option value="0">Business Travel</option>
         </select><br>
 
         <label for="class-type">Class Type :</label>
         <select id="class-type" name="class-type"
             style="width: 100%; padding: 10px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 5px;">
-            <option>Economy</option>
-            <option>Economy Plus</option>
-            <option>Business</option>
+            <option value="ECO">Economy</option>
+            <option value="ECO_PLUS">Economy Plus</option>
         </select><br>
 
         <div class="d-flex justify-content-between">
